@@ -8,7 +8,8 @@ if (is_null($todosArray)) {
 
 $todosArray[] = [
     "task" => $_POST['newTask'],
-    "createdAt" => "Created at: " . date('Y/m/d h:i:s'),
+    "createdAt" => date('Y/m/d h:i:s'),
+    "deadline" => $_POST['deadlineDate'] . ' ' . $_POST['deadlineTime']
 ];
 
 file_put_contents('./todos.json', json_encode($todosArray));
